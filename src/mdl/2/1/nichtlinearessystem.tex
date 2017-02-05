@@ -1,8 +1,17 @@
 \begin{question}[section=2,name={Nichtlineares System},difficulty=4,type=mdl,tags={}]
-	Ein nichtlineares System der Form $\dot{x} = f(x, u, t),\; y = h(x, u, t)$ sei gegeben. Linearisieren Sie dieses um eine allgemeine Ruhelage.
+	Ein nichtlineares System der Form $\dot{\vec x} = f(\vec x,\vec u, t),\; y = h(\vec x,\vec u, t)$ sei gegeben. Linearisieren Sie dieses um eine allgemeine Ruhelage.
 	\\ \textbf{Hinweis:}\\
 	
 \end{question}
 \begin{solution}
-	
+	\begin{align}
+		\underline A &= \frac{\partial \vec f(\vec x,\vec u, t)}{\partial \vec x}\arrowvert_{x=x_R; ~u=u_R}\\
+		\underline B &= \frac{\partial \vec f(\vec x,\vec u, t)}{\partial \vec u}\arrowvert_{x=x_R; ~u=u_R}\\
+		\underline C &= \frac{\partial \vec h(\vec x,\vec u, t)}{\partial \vec x}\arrowvert_{x=x_R; ~u=u_R}\\
+		\underline D &= \frac{\partial \vec h(\vec x,\vec u, t)}{\partial \vec u}\arrowvert_{x=x_R; ~u=u_R}
+	\end{align}
+	\begin{align}
+		\Delta \dot{\vec x}&=\underline A \Delta \vec x + \underline B \Delta \vec u\\
+		\Delta \vec y &= \underline C \Delta \vec x + \underline D \Delta \vec u
+	\end{align}
 \end{solution}
