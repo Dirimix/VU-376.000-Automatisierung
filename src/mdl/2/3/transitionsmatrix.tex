@@ -1,9 +1,20 @@
 \begin{question}[section=2,name={Transitionsmatrix},difficulty=3,type=mdl,tags={}]
 	Transitionsmatrix und Eigenschaften
 	\\ \textbf{Hinweis:}\\
-	
+	Buch Seite 28
 \end{question}
 \begin{solution}
+	Die Transitionsmatrix kann über die Laplace-transformierte von
+	\begin{equation}
+		\Phi(t)=\mathscr L^{-1}\{ (s\cdot \underline E - \underline A)^{-1}\}
+	\end{equation}
+	bestimmt werden. Oder direkt mittels $e^{\underline A \cdot t}$ wobei hier $\underline A$ in diagonalform vorliegen muss.
+	Dazu werden die Eigenwerte und Eigenvektoren von $\underline A$ bestimmt und die Dynamikmatrix in ihre Diagonalfrom Transformiert. $\tilde{\underline{A}}=\underline V ^{-1} \underline{A} \underline{V}$ Aus der Diagonalform wird dann die Transitionsmatrix gebildet, welche dann zurücktransformiert wird. $\Phi (t) = \underline{V} e^{\tilde{\underline{A}}t} \underline V ^{-1}$
+	Kommen in der Diagonalform Jordanblöcke vor, müssen die wie folgt umgeformt werden:
+	\begin{align}
+		\left ( \begin{array}{ccc} \lambda_1 & 1 & 0 \\0 & \lambda_1 & 0\\ 0 & 0 & \lambda_2 \end{array} \right ) &\Leftrightarrow \left ( \begin{array}{ccc} e^{\lambda_1 t} & t\cdot e^{\lambda_1 t} & 0 \\0 & e^{\lambda_1 t} & 0\\ 0 & 0 & e^{\lambda_2 t} \end{array} \right )\\
+		\left ( \begin{array}{cc} \alpha_1 & \beta_1  \\-\beta_1 & \alpha_1 \end{array} \right ) &\Leftrightarrow \left ( \begin{array}{cc} e^{\alpha_1 t} \cos(\beta_1 t) &  e^{\alpha_1 t}\sin(\beta_1 t)  \\ -e^{\alpha_1 t}\sin(\beta_1 t)& e^{\alpha_1 t} \cos(\beta_1 t)   \end{array} \right )
+	\end{align}
 	Eigenschaften der Transitionsmatrix:
 	\begin{align}
 		\underline{\Phi}(0) &= \underline E\\

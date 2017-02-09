@@ -1,8 +1,15 @@
 \begin{question}[section=3,name={Anfangszustand},difficulty=5,type=mdl,tags={}]
-	Gegeben ist ein System in folgender Darstellung: $\dot{x} = Ax + Bu$, $y = Cx + Du$ mit dem Anfangszustand $x_0$. Geben Sie die allgemeine Lösung an. (im Zeitbereich und im Laplacebereich + Herleitungen)
+	Gegeben ist ein System in folgender Darstellung: $\dot{\vec x} = \underline A\vec x + \underline B\vec u$, $y = \underline C\vec x + \underline D\vec u$ mit dem Anfangszustand $\vec x_0$. Geben Sie die allgemeine Lösung an. (im Zeitbereich und im Laplacebereich + Herleitungen)
 	\\ \textbf{Hinweis:}\\
-	
+	Satz 2.4
 \end{question}
 \begin{solution}
-	
+	\begin{align}
+		s \vec X(s) -\vec x_0 & = \underline A \vec X(s) + \underline B \vec U(s)\\
+		\vec X(s) (s \underline E - \underline A) &= \vec x_0 + \underline B \vec U(s)\\
+		\vec X(s) &= (s \underline E - \underline A)^{-1}(\vec x_0 + \underline B \vec U(s))\\
+		\vec Y(s) &= \underline C \vec X(s) + \underline D \vec U(s)\\
+		\vec Y(s) &= \underline C (s \underline E - \underline A)^{-1}\vec x_0 + (\underline C(s \underline E - \underline A)^{-1}\underline B +\underline D) \vec U(s)\\
+		\mathscr L ^{-1}\{ \vec Y(s) \}&= \underline C \Phi(t)\vec x_0 + \underline C \int \limits _0 ^t\Phi(t-t')\underline B \vec u(t') dt' +\underline D \vec u(t)
+	\end{align}
 \end{solution}
